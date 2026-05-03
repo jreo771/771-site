@@ -1,9 +1,10 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Cpu, Leaf, NotebookPen, Mail, Sparkles } from "lucide-react";
 
-// 🔧 Minimal local components (replaces shadcn)
+// 🔧 Minimal local components
 function Card({ className = "", children }: { className?: string; children: React.ReactNode }) {
   return <div className={className}>{children}</div>;
 }
@@ -15,10 +16,12 @@ function CardContent({ className = "", children }: { className?: string; childre
 function Button({
   className = "",
   variant,
+  href,
   children,
 }: {
   className?: string;
   variant?: "outline";
+  href?: string;
   children: React.ReactNode;
 }) {
   const base = "inline-flex items-center justify-center font-medium transition";
@@ -26,6 +29,14 @@ function Button({
     variant === "outline"
       ? "border bg-transparent hover:bg-stone-100"
       : "bg-stone-950 text-white hover:bg-stone-800";
+
+  if (href) {
+    return (
+      <a href={href} className={`${base} ${styles} ${className}`}>
+        {children}
+      </a>
+    );
+  }
 
   return <button className={`${base} ${styles} ${className}`}>{children}</button>;
 }
@@ -76,12 +87,29 @@ const posts = [
 export default function LorenPersonalBrandSite() {
   return (
     <main className="min-h-screen bg-stone-50 text-stone-950">
+
+      {/* NAV */}
+      <nav className="sticky top-0 z-50 border-b border-stone-200 bg-stone-50/80 px-6 py-4 backdrop-blur md:px-12 lg:px-20">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
+          <a href="/" className="font-semibold tracking-tight">
+            Loren Reolizo
+          </a>
+          <div className="flex gap-5 text-sm text-stone-600">
+            <a href="/notebook" className="hover:text-stone-950">Notebook</a>
+            <a href="/thesis" className="hover:text-stone-950">Thesis</a>
+            <a href="/case-study" className="hover:text-stone-950">Case Study</a>
+            <a href="/field-notes" className="hover:text-stone-950">Field Notes</a>
+          </div>
+        </div>
+      </nav>
+
       {/* HERO */}
       <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(120,113,108,0.18),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(68,64,60,0.12),transparent_35%)]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="space-y-8">
+
             <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white/70 px-4 py-2 text-sm text-stone-700 shadow-sm backdrop-blur">
               <Sparkles className="h-4 w-4" />
               AI Infrastructure · Governance · Sustainability
@@ -97,13 +125,15 @@ export default function LorenPersonalBrandSite() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button className="rounded-2xl px-6 py-6 text-base shadow-md">
-                Read the thesis <ArrowRight className="ml-2 h-4 w-4" />
+              <Button href="/notebook" className="rounded-2xl px-6 py-6 text-base shadow-md">
+                Open the notebook <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" className="rounded-2xl border-stone-300 px-6 py-6 text-base">
-                Invite me to speak
+
+              <Button href="/case-study" variant="outline" className="rounded-2xl border-stone-300 px-6 py-6 text-base">
+                View the case study
               </Button>
             </div>
+
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }}>
@@ -152,46 +182,6 @@ export default function LorenPersonalBrandSite() {
         </div>
       </section>
 
-      {/* POSTS */}
-      <section className="bg-stone-900 px-6 py-20 text-white md:px-12 lg:px-20">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="space-y-4">
-            <p className="text-sm uppercase tracking-[0.25em] text-stone-400">Writing</p>
-            <h2 className="text-3xl font-semibold md:text-5xl">Notes from the systems layer.</h2>
-          </div>
-
-          <div className="grid gap-4">
-            {posts.map((post) => (
-              <Card key={post.title} className="rounded-3xl border-stone-700 bg-stone-800/70 p-6">
-                <p className="text-sm text-stone-400">{post.type}</p>
-                <h3 className="text-xl font-semibold">{post.title}</h3>
-                <p className="text-stone-300">{post.blurb}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section className="px-6 py-20 md:px-12 lg:px-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-          <div className="space-y-5">
-            <h2 className="text-3xl font-semibold md:text-5xl">I translate enterprise friction into strategy.</h2>
-            <p className="text-lg text-stone-700">
-              My background spans infrastructure, governance, identity, and enterprise delivery. I focus on the layer that determines whether technology becomes useful—or just another failed pilot.
-            </p>
-          </div>
-
-          <Card className="rounded-2xl border p-8">
-            <h3 className="text-xl font-semibold mb-4">Current focus</h3>
-            <ul className="space-y-2 text-stone-700">
-              <li>• AI governance</li>
-              <li>• Sustainable AI infrastructure</li>
-              <li>• Democratized AI in education</li>
-            </ul>
-          </Card>
-        </div>
-      </section>
     </main>
   );
 }
