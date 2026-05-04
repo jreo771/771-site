@@ -1,81 +1,78 @@
-export default function NotebookPage() {
-  return (
-    <main className="min-h-screen bg-stone-50 px-6 py-20 text-stone-950 md:px-12 lg:px-20">
-      <section className="mx-auto max-w-4xl space-y-12">
-        
-        <div className="space-y-4">
-          <a href="/" className="text-sm text-stone-500 hover:text-stone-950">
-            ← Back
-          </a>
+<article className="space-y-6">
+  <p className="text-sm text-stone-500">Entry 001</p>
 
-          <p className="text-sm uppercase tracking-[0.25em] text-stone-500">
-            Working Notebook
-          </p>
+  <h2 className="text-3xl font-semibold">
+    How did I get here?
+  </h2>
 
-          <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-            Democratized AI in Education
-          </h1>
+  <p className="text-xl leading-8 text-stone-700">
+  This notebook started as a thread I couldn’t ignore.
+</p>
 
-          <p className="text-xl leading-8 text-stone-700">
-            This is a live notebook. Ideas here are incomplete, evolving, and sometimes wrong.
-          </p>
-        </div>
+  <div className="space-y-6 text-lg leading-9 text-stone-700">
 
-        {/* ENTRY 001 */}
-        <article className="space-y-6">
-          <p className="text-sm text-stone-500">Entry 001</p>
+    <p>
+      This didn’t start as a plan.
+    </p>
 
-          <h2 className="text-3xl font-semibold">
-            Why education?
-          </h2>
+    <p>
+      It started with an invitation. Something around sustainability. I wasn’t
+      expecting much from it—just another conversation, another topic that sits
+      adjacent to technology but rarely connects cleanly to how things actually work.
+    </p>
 
-          <div className="space-y-6 text-lg leading-9 text-stone-700">
-            <p>
-              I didn’t start with a technical reason. I started with a tension.
-            </p>
+    <p>
+      But then the conversations kept going. I met people who were thinking about
+      democratizing AI, people working in and around sustainability, people trying
+      to make sense of where all of this is heading.
+    </p>
 
-            <p>
-              If AI is going to reshape access to knowledge, decision-making, and opportunity,
-              then education feels like the most honest place to test that.
-            </p>
+    <p>
+      And something about it felt… familiar.
+    </p>
 
-            <p>
-              But that also raises a harder question:
-            </p>
+    <p>
+      Not in a way I could immediately explain. More like a quiet recognition.
+      Like I had been circling the same set of questions from a completely different
+      direction—through infrastructure, governance, and the systems that usually
+      sit behind the scenes.
+    </p>
 
-            <blockquote className="border-l-4 border-stone-300 pl-5 text-xl font-medium text-stone-900">
-              If democratized AI cannot work in education, should we expect it to work anywhere else?
-            </blockquote>
+    <p>
+      The more I listened, the more I realized that a lot of these conversations
+      were happening at a very high level—ideas about access, potential, scale.
+      But I couldn’t stop thinking about what happens underneath all of that.
+    </p>
 
-            <p>
-              The more I think about it, the less this feels like a software problem.
-            </p>
+    <p>
+      Who owns these systems?
+      <br />
+      Who governs them?
+      <br />
+      What breaks first?
+      <br />
+      And what happens when they scale faster than our ability to understand or control them?
+    </p>
 
-            <p>
-              It feels like an infrastructure problem. A governance problem. A question of ownership,
-              accountability, and what systems we actually trust to shape how people learn.
-            </p>
+    <p>
+      That’s when this started to feel less like a topic and more like a thread I
+      needed to follow.
+    </p>
 
-            <p>
-              I’m not sure yet if education is the right starting point. But the fact that I’m unsure
-              is probably the signal that it’s worth exploring.
-            </p>
-          </div>
-        </article>
+    <p>
+      I’m not starting from a position of expertise here. If anything, I’m starting
+      from a position of tension—between what is being said, and what I’ve seen
+      systems actually do in practice.
+    </p>
 
-        {/* QUESTIONS */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">Open questions</h2>
+    <p>
+      So this notebook is where I’m going to work through that.
+    </p>
 
-          <ul className="space-y-2 text-stone-700">
-            <li>• What does “democratized AI” actually mean beyond access?</li>
-            <li>• What infrastructure would schools realistically need?</li>
-            <li>• Who governs AI in a classroom context?</li>
-            <li>• Where does this break first?</li>
-          </ul>
-        </section>
+    <p>
+      Not to arrive at quick answers, but to stay with the questions long enough
+      to see what holds.
+    </p>
 
-      </section>
-    </main>
-  );
-}
+  </div>
+</article>
