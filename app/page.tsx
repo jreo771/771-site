@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Cpu, Leaf, NotebookPen, Sparkles } from "lucide-react";
+import { ArrowRight, MapPin, Users, Cpu, NotebookPen, Sparkles } from "lucide-react";
 
 // Minimal components
 function Card({ className = "", children }: { className?: string; children: React.ReactNode }) {
@@ -41,27 +41,27 @@ function Button({
   return <button className={`${base} ${styles} ${className}`}>{children}</button>;
 }
 
-// Content
+// Content pillars (reframed)
 const pillars = [
   {
-    icon: ShieldCheck,
-    title: "AI Governance",
-    text: "What happens when systems make decisions, and who is responsible for them.",
+    icon: Users,
+    title: "Access",
+    text: "Who gets to use these systems, and who is left out.",
+  },
+  {
+    icon: MapPin,
+    title: "Context",
+    text: "What changes when the same system is placed in different environments.",
   },
   {
     icon: Cpu,
-    title: "AI Infrastructure",
-    text: "The layers underneath AI that determine whether anything actually works at scale.",
-  },
-  {
-    icon: Leaf,
-    title: "Sustainability",
-    text: "What it costs—physically, economically, and structurally—to keep these systems running.",
+    title: "Infrastructure",
+    text: "The parts underneath that determine whether anything actually works.",
   },
   {
     icon: NotebookPen,
-    title: "Human Agency",
-    text: "What we keep, what we outsource, and what we might lose without noticing.",
+    title: "Observation",
+    text: "A place to notice what does not quite line up.",
   },
 ];
 
@@ -99,18 +99,20 @@ export default function HomePage() {
 
             <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white/70 px-4 py-2 text-sm text-stone-700 shadow-sm backdrop-blur">
               <Sparkles className="h-4 w-4" />
-              AI · Infrastructure · Governance · Sustainability
+              AI · Systems · Context
             </div>
 
             <div className="space-y-5">
               <h1 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
-                Thinking through the systems behind AI.
+                Access is not the same as relevance.
               </h1>
 
               <p className="max-w-2xl text-lg leading-8 text-stone-700 md:text-xl">
-                I’m building a public notebook around AI, infrastructure, governance,
-                sustainability, and human agency—trying to understand what holds,
-                what breaks, and what we should be careful not to simplify.
+                There is a lot of conversation around democratizing AI. But giving people access to the same system does not mean it will mean the same thing everywhere.
+              </p>
+
+              <p className="max-w-2xl text-lg leading-8 text-stone-700">
+                I am trying to understand what changes when AI is not just distributed, but situated—when it begins to reflect the environments it lives in.
               </p>
             </div>
 
@@ -134,16 +136,15 @@ export default function HomePage() {
             <Card className="rounded-[2rem] border-stone-200 bg-white/80 shadow-xl backdrop-blur">
               <CardContent className="space-y-6 p-8">
                 <p className="text-sm uppercase tracking-[0.25em] text-stone-500">
-                  A note
+                  A question
                 </p>
 
                 <blockquote className="text-2xl font-medium leading-snug text-stone-900">
-                  “I keep wondering whether AI is less about intelligence itself—and
-                  more about the systems we build around it.”
+                  “What happens when everyone has access to the same intelligence, but not the same context?”
                 </blockquote>
 
                 <p className="leading-7 text-stone-600">
-                  This space is an attempt to follow that question without rushing to resolve it.
+                  This is where I follow that question without trying to resolve it too quickly.
                 </p>
               </CardContent>
             </Card>
@@ -162,12 +163,11 @@ export default function HomePage() {
             </p>
 
             <h2 className="text-3xl font-semibold md:text-5xl">
-              A place to notice what doesn’t quite line up.
+              Not answers. Patterns.
             </h2>
 
             <p className="text-lg leading-8 text-stone-700">
-              This is where I collect questions, patterns, and observations about the
-              systems underneath AI—the parts that are easy to ignore until something breaks.
+              This is a place to collect observations about the systems around AI—where they hold, where they break, and what changes depending on where they are used.
             </p>
           </div>
 
