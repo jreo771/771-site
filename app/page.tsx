@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Cpu, Leaf, NotebookPen, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, Cpu, Leaf, NotebookPen, Sparkles } from "lucide-react";
 
-// 🔧 Minimal local components
+// Minimal components
 function Card({ className = "", children }: { className?: string; children: React.ReactNode }) {
   return <div className={className}>{children}</div>;
 }
@@ -41,50 +41,31 @@ function Button({
   return <button className={`${base} ${styles} ${className}`}>{children}</button>;
 }
 
-// 📦 Content
+// Content
 const pillars = [
   {
     icon: ShieldCheck,
     title: "AI Governance",
-    text: "Clear accountability, traceability, ownership boundaries, and enterprise controls before AI is operationalized.",
+    text: "What happens when systems make decisions, and who is responsible for them.",
   },
   {
     icon: Cpu,
     title: "AI Infrastructure",
-    text: "The hidden systems layer behind AI: identity, compute, integrations, data flow, security, and operational readiness.",
+    text: "The layers underneath AI that determine whether anything actually works at scale.",
   },
   {
     icon: Leaf,
-    title: "Sustainable Technology",
-    text: "A practical lens on AI growth: energy, e-waste, procurement, decommissioning, and long-term resilience.",
+    title: "Sustainability",
+    text: "What it costs—physically, economically, and structurally—to keep these systems running.",
   },
   {
     icon: NotebookPen,
-    title: "Human-Centered Systems",
-    text: "Technology should increase human agency, not erase ownership, judgment, or accountability.",
+    title: "Human Agency",
+    text: "What we keep, what we outsource, and what we might lose without noticing.",
   },
 ];
 
-const posts = [
-  {
-    title: "Everyone wants AI scale. Who owns the infrastructure risk?",
-    type: "Essay",
-    blurb: "A field note on the gap between AI ambition and enterprise operational reality.",
-  },
-  {
-    title: "The automation plateau is not a tooling problem",
-    type: "Reflection",
-    blurb: "Why organizations get stuck after the demo—and what governance has to do with it.",
-  },
-  {
-    title: "Sustainable AI starts before the GPU is purchased",
-    type: "Research note",
-    blurb: "A practical view of procurement, capacity planning, lifecycle management, and e-waste.",
-  },
-];
-
-// 🚀 Page
-export default function LorenPersonalBrandSite() {
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-stone-50 text-stone-950">
 
@@ -108,19 +89,28 @@ export default function LorenPersonalBrandSite() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(120,113,108,0.18),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(68,64,60,0.12),transparent_35%)]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="space-y-8">
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="space-y-8"
+          >
 
             <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white/70 px-4 py-2 text-sm text-stone-700 shadow-sm backdrop-blur">
               <Sparkles className="h-4 w-4" />
-              AI Infrastructure · Governance · Sustainability
+              AI · Infrastructure · Governance · Sustainability
             </div>
 
             <div className="space-y-5">
               <h1 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
-                Building accountable systems for the age of AI.
+                Thinking through the systems behind AI.
               </h1>
+
               <p className="max-w-2xl text-lg leading-8 text-stone-700 md:text-xl">
-                I write and think at the intersection of enterprise infrastructure, AI governance, sustainability, and human agency—where the real work begins after the demo ends.
+                I’m building a public notebook around AI, infrastructure, governance,
+                sustainability, and human agency—trying to understand what holds,
+                what breaks, and what we should be careful not to simplify.
               </p>
             </div>
 
@@ -130,36 +120,54 @@ export default function LorenPersonalBrandSite() {
               </Button>
 
               <Button href="/case-study" variant="outline" className="rounded-2xl border-stone-300 px-6 py-6 text-base">
-                View the case study
+                Follow the case study
               </Button>
             </div>
 
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+          >
             <Card className="rounded-[2rem] border-stone-200 bg-white/80 shadow-xl backdrop-blur">
               <CardContent className="space-y-6 p-8">
-                <p className="text-sm uppercase tracking-[0.25em] text-stone-500">Field Notes</p>
+                <p className="text-sm uppercase tracking-[0.25em] text-stone-500">
+                  A note
+                </p>
+
                 <blockquote className="text-2xl font-medium leading-snug text-stone-900">
-                  “AI is not just a model problem. It is an infrastructure, governance, and accountability problem.”
+                  “I keep wondering whether AI is less about intelligence itself—and
+                  more about the systems we build around it.”
                 </blockquote>
+
                 <p className="leading-7 text-stone-600">
-                  This site is where I turn real enterprise friction into strategy, research, and practical frameworks.
+                  This space is an attempt to follow that question without rushing to resolve it.
                 </p>
               </CardContent>
             </Card>
           </motion.div>
+
         </div>
       </section>
 
-      {/* PILLARS */}
+      {/* WORK */}
       <section className="px-6 py-16 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl">
+
           <div className="mb-10 max-w-3xl space-y-3">
-            <p className="text-sm uppercase tracking-[0.25em] text-stone-500">The Work</p>
-            <h2 className="text-3xl font-semibold md:text-5xl">A practical thesis, not a buzzword stack.</h2>
+            <p className="text-sm uppercase tracking-[0.25em] text-stone-500">
+              The work
+            </p>
+
+            <h2 className="text-3xl font-semibold md:text-5xl">
+              A place to notice what doesn’t quite line up.
+            </h2>
+
             <p className="text-lg leading-8 text-stone-700">
-              My focus is the space most organizations underestimate: what it takes to make AI reliable, governable, sustainable, and safe enough to operate in the real world.
+              This is where I collect questions, patterns, and observations about the
+              systems underneath AI—the parts that are easy to ignore until something breaks.
             </p>
           </div>
 
@@ -179,6 +187,7 @@ export default function LorenPersonalBrandSite() {
               );
             })}
           </div>
+
         </div>
       </section>
 
