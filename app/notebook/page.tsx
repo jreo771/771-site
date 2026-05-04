@@ -1,78 +1,108 @@
-<article className="space-y-6">
-  <p className="text-sm text-stone-500">Entry 001</p>
+export default function NotebookPage() {
+  return (
+    <main className="min-h-screen bg-stone-50 px-6 py-20 text-stone-950 md:px-12 lg:px-20">
+      <section className="mx-auto max-w-4xl space-y-12">
 
-  <h2 className="text-3xl font-semibold">
-    How did I get here?
-  </h2>
+        {/* HEADER */}
+        <div className="space-y-4">
+          <a href="/" className="text-sm text-stone-500 hover:text-stone-950">
+            ← Back
+          </a>
 
-  <p className="text-xl leading-8 text-stone-700">
-  This notebook started as a thread I couldn’t ignore.
-</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-stone-500">
+            Working Notebook
+          </p>
 
-  <div className="space-y-6 text-lg leading-9 text-stone-700">
+          <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+            Democratized AI in Education
+          </h1>
 
-    <p>
-      This didn’t start as a plan.
-    </p>
+          <p className="text-xl leading-8 text-stone-700">
+            This notebook started as a thread I could not ignore.
+          </p>
+        </div>
 
-    <p>
-      It started with an invitation. Something around sustainability. I wasn’t
-      expecting much from it—just another conversation, another topic that sits
-      adjacent to technology but rarely connects cleanly to how things actually work.
-    </p>
+        {/* ENTRY 001 */}
+        <article className="space-y-6">
+          <p className="text-sm text-stone-500">Entry 001</p>
 
-    <p>
-      But then the conversations kept going. I met people who were thinking about
-      democratizing AI, people working in and around sustainability, people trying
-      to make sense of where all of this is heading.
-    </p>
+          <h2 className="text-3xl font-semibold">
+            How did I get here?
+          </h2>
 
-    <p>
-      And something about it felt… familiar.
-    </p>
+          <div className="space-y-6 text-lg leading-9 text-stone-700">
 
-    <p>
-      Not in a way I could immediately explain. More like a quiet recognition.
-      Like I had been circling the same set of questions from a completely different
-      direction—through infrastructure, governance, and the systems that usually
-      sit behind the scenes.
-    </p>
+            <p>
+              This did not start as a plan.
+            </p>
 
-    <p>
-      The more I listened, the more I realized that a lot of these conversations
-      were happening at a very high level—ideas about access, potential, scale.
-      But I couldn’t stop thinking about what happens underneath all of that.
-    </p>
+            <p>
+              It started with an invitation. Something around sustainability. I was not expecting much from it. Just another conversation, another topic that sits next to technology but rarely connects to how things actually work.
+            </p>
 
-    <p>
-      Who owns these systems?
-      <br />
-      Who governs them?
-      <br />
-      What breaks first?
-      <br />
-      And what happens when they scale faster than our ability to understand or control them?
-    </p>
+            <p>
+              But the conversations kept going. I met people who were thinking about democratizing AI. People working in sustainability. People trying to make sense of where all of this is going.
+            </p>
 
-    <p>
-      That’s when this started to feel less like a topic and more like a thread I
-      needed to follow.
-    </p>
+            <p>
+              And something about it felt familiar.
+            </p>
 
-    <p>
-      I’m not starting from a position of expertise here. If anything, I’m starting
-      from a position of tension—between what is being said, and what I’ve seen
-      systems actually do in practice.
-    </p>
+            <p>
+              Not in a way I could immediately explain. More like recognition. Like I had been circling the same set of questions from a completely different direction. Through infrastructure. Through governance. Through the systems that usually sit behind everything.
+            </p>
 
-    <p>
-      So this notebook is where I’m going to work through that.
-    </p>
+            <p>
+              The more I listened, the more I noticed that a lot of the conversation was happening at a high level. Ideas about access. About potential. About scale.
+            </p>
 
-    <p>
-      Not to arrive at quick answers, but to stay with the questions long enough
-      to see what holds.
-    </p>
+            <p>
+              But I kept thinking about what happens underneath all of that.
+            </p>
 
-  </div>
-</article>
+            <p>
+              Who owns these systems?
+              <br />
+              Who governs them?
+              <br />
+              What breaks first?
+              <br />
+              And what happens when they scale faster than our ability to understand or control them?
+            </p>
+
+            <p>
+              At some point, this stopped feeling like a topic and started feeling like something I needed to follow.
+            </p>
+
+            <p>
+              I am not starting from a position of expertise here. If anything, I am starting from tension. Between what is being said, and what I have seen systems actually do in practice.
+            </p>
+
+            <p>
+              So this notebook is where I work through that.
+            </p>
+
+            <p>
+              Not to arrive at quick answers. But to stay with the questions long enough to see what holds.
+            </p>
+
+          </div>
+        </article>
+
+        {/* QUESTIONS */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold">Open questions</h2>
+
+          <ul className="space-y-2 text-stone-700">
+            <li>• What does democratized AI actually mean beyond access?</li>
+            <li>• Why does education feel like the starting point?</li>
+            <li>• What infrastructure would this require to be real?</li>
+            <li>• Who owns governance in these systems?</li>
+            <li>• Where does this break first?</li>
+          </ul>
+        </section>
+
+      </section>
+    </main>
+  );
+}
